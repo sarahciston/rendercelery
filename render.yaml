@@ -1,6 +1,6 @@
 services:
   - type: worker
-    name: queue
+    name: celery
     region: frankfurt
     env: python
     buildCommand: "pip install -r requirements.txt"
@@ -12,7 +12,7 @@ services:
           type: redis
           property: connectionString
   - type: web
-    name: app
+    name: server
     region: frankfurt
     env: python
     buildCommand: "pip install -r requirements.txt"
